@@ -8,7 +8,7 @@ public class losing : MonoBehaviour
     {
         int elements = FindObjectsOfType<ball_position>().Length;
         Destroy(collision.gameObject);
-        if (elements == 1) { FindObjectOfType<buttons_handler>().start_game(); }
+        if (elements == 1) { FindObjectOfType<buttons_handler>().lost(); }
     }
 
 }

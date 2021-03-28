@@ -52,8 +52,8 @@ public class ball_position : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(_col,Camera.main.transform.position);
         _rigid.velocity += new Vector2(
-            UnityEngine.Random.Range(0,_random_factor),
-            UnityEngine.Random.Range(0, _random_factor));
+            UnityEngine.Random.Range(-_random_factor, _random_factor),
+            UnityEngine.Random.Range(-_random_factor, _random_factor));
 
     }
 }

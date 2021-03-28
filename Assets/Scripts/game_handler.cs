@@ -10,6 +10,7 @@ public class game_handler : MonoBehaviour
     [SerializeField] Text _score;
     int _current_score;
     int _increase_in_score = 10;
+    public bool lost = false;
     private void Awake()
     {
         int elements = FindObjectsOfType<game_handler>().Length;
@@ -24,12 +25,14 @@ public class game_handler : MonoBehaviour
     }
     private void Update()
     {
-        if (_blocks <= 0)
+        if (_blocks <= 0 &&!lost)
         {
             _buttons.next();
         }
     }
-    public void increase() { _blocks++; }
+    public void increase() { lost=false; _blocks++; }
+    public void new_level() { lost = true; _blocks = 0;}
+
     public void decrease() 
     {
         _blocks--;
